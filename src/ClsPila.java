@@ -3,8 +3,8 @@ import javax.swing.DefaultListModel;
 public class ClsPila
 {
 ClsNodo Top;
-DefaultListModel<Integer>modelo;
-		
+DefaultListModel<String> modelo;
+		int size=0;
 /**
  * Inicializa una pila vacia.
  */
@@ -17,7 +17,7 @@ DefaultListModel<Integer>modelo;
 	 * Agrega un nuevo elemento a la pila.
 	 * @param elemento es el numero que sera agregado a la pila.
 	 */
-	public void add(int elemento)
+	public void add(String elemento)
 	{
 		ClsNodo nuevo=new ClsNodo(elemento);
 		if(vacia())
@@ -28,6 +28,7 @@ DefaultListModel<Integer>modelo;
 			nuevo.setSiguiente(Top);
 			Top=nuevo;
 		}
+		size++;
 	}
 	
 	/**
@@ -43,7 +44,7 @@ DefaultListModel<Integer>modelo;
 	 * 
 	 * @return Valor que se encuentra en la cima de la pila.<br>Solo muestra el valor, no lo elimina.
 	 */
-	public int peek()
+	public String peek()
 	{
 		return Top.getValor();
 	}
@@ -52,11 +53,12 @@ DefaultListModel<Integer>modelo;
 	 * 
 	 * @return Muestra el valor en la cima de la pila.<br>Despues lo elimina.
 	 */
-	public int pop()
+	public String pop()
 	{
-		int num=Top.getValor();
+		String num=Top.getValor();
 		
 		Top=Top.getSiguiente();
+		size--;
 		return num;
 	}
 	
@@ -73,7 +75,7 @@ DefaultListModel<Integer>modelo;
 	 * @param elemento es el valor que sera buscado en la pila.
 	 * @return indice en la que se encuentra un elemento.
 	 */
-	public int buscar(int elemento)
+	public int buscar(String elemento)
 	{
 		int index=-1;
 		int i=0;
@@ -93,14 +95,21 @@ DefaultListModel<Integer>modelo;
 		}		
 		return index;
 	}
-	
+	/**
+	 * 
+	 * @return cantidad de elementos en la pila
+	 */
+	public int getSize()
+	{
+		return size;
+	}
 	/**
 	 * Recorre la pila de manera secuencial.
 	 * @return DefaulListModel con los valores de la pila.
 	 */
-	public DefaultListModel<Integer> Imprimir()
+	public DefaultListModel<String> Imprimir()
 	{
-		modelo=new DefaultListModel<Integer>();
+		modelo=new DefaultListModel<String>();
 		ClsNodo aux=Top;
 		while(aux!=null)
 		{

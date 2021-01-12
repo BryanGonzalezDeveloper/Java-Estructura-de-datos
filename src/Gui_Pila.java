@@ -67,7 +67,7 @@ public class Gui_Pila extends JFrame {
 			
 				try
 				{
-					objPila.add(Integer.parseInt(txtNum.getText()));
+					objPila.add(txtNum.getText());
 					
 					txtNum.setText("");
 					list.setModel(objPila.Imprimir());
@@ -113,7 +113,7 @@ public class Gui_Pila extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try
 				{
-					int indice=objPila.buscar(Integer.parseInt(txtNum.getText()));
+					int indice=objPila.buscar(txtNum.getText());
 					if(indice==-1)
 					JOptionPane.showInternalMessageDialog(null, "El dato no se encuentra en la lista.");
 					else

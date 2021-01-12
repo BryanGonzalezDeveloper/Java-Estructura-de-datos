@@ -1,7 +1,7 @@
 
 public class ClsNodo
 {
-	  private int valor;
+	  private String valor;
 	    private ClsNodo siguiente;
 
 	    /**
@@ -9,7 +9,7 @@ public class ClsNodo
 	     * Crea un nuevo nodo.
 	     * @param valor el dato que se guardara en el nodo.
 	     */
-	    public ClsNodo(int valor)
+	    public ClsNodo(String valor)
 	    {
 	        this.valor = valor;
 	        this.siguiente = null;
@@ -26,7 +26,7 @@ public class ClsNodo
 	     * 
 	     * @return valor guardado en el nodo.
 	     */
-	    public int getValor(){
+	    public String getValor(){
 	        return valor;
 	    }
 	    /**
