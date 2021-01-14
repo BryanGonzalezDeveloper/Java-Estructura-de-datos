@@ -4,8 +4,10 @@ import javax.swing.DefaultListModel;
 
 public class ClsArbolBinario 
 {
-	ClsNodo raiz;
+	ClsNodo raiz;	
 	Integer dato;
+	Integer menor=Integer.MAX_VALUE;
+	Integer mayor=Integer.MIN_VALUE;
 	public ClsArbolBinario()
 	{
 		raiz=null;
@@ -14,7 +16,10 @@ public class ClsArbolBinario
 	public void insertar(Integer numero)
 	{
 		if(raiz==null)
+		{
 			raiz=new ClsNodo(numero);
+		}
+			
 		else
 		raiz.insertar(numero);
 	}
@@ -24,6 +29,11 @@ public class ClsArbolBinario
 	{
 		if(nodoRaiz!=null)
 		{
+			if(nodoRaiz.getDato()>mayor)
+				mayor=nodoRaiz.getDato();
+			else if(nodoRaiz.getDato()<menor)
+				menor=nodoRaiz.getDato();
+				
 			modeloPreorden.addElement(nodoRaiz.getDato());
 			preorden(nodoRaiz.getNodoIzquierdo());
 			preorden(nodoRaiz.getNodoDerecho());
@@ -89,5 +99,14 @@ public class ClsArbolBinario
 		return encontrado;
 	}
 	
+	public Integer getMayor()
+	{
+		return mayor;
+	}
+	
+	public Integer getMenor()
+	{
+		return menor;
+	}
 	
 }

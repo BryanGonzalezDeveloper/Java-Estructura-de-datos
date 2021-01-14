@@ -127,5 +127,23 @@ public class Gui_Arboles extends JFrame {
 		});
 		btnBuscar.setBounds(222, 53, 106, 23);
 		contentPane.add(btnBuscar);
+		
+		JButton btnMenor = new JButton("MENOR");
+		btnMenor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "EL DATO MENOR ES: "+objArbol.getMenor());
+			}
+		});
+		btnMenor.setBounds(365, 19, 106, 23);
+		contentPane.add(btnMenor);
+		
+		JButton btnMayor = new JButton("MAYOR");
+		btnMayor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "EL DATO MAYOR ES: "+objArbol.getMayor());
+			}
+		});
+		btnMayor.setBounds(365, 53, 106, 23);
+		contentPane.add(btnMayor);
 	}
 }

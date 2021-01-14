@@ -4,7 +4,6 @@ public class ClsNodo
 	private Integer dato;
 	private ClsNodo izquierdo;
 	private ClsNodo derecho;
-	
 	public ClsNodo()
 	{
 		dato=null;
